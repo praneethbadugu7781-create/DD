@@ -34,13 +34,13 @@ export default function App() {
       <TopBar orderCount={openOrders.length} />
 
       {/* Main Content */}
-      <div className="flex h-[calc(100vh-88px)]">
+      <div className="flex flex-col lg:flex-row h-[calc(100vh-88px)]">
         {/* Left Panel - Menu */}
         <motion.div
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.1 }}
-          className="flex-1 overflow-hidden p-6 border-r border-warm-brown/10"
+          className="flex-1 overflow-hidden p-3 sm:p-4 lg:p-6 border-b lg:border-b-0 lg:border-r border-warm-brown/10"
         >
           <MenuGrid onAddItem={addItem} />
         </motion.div>
@@ -50,7 +50,7 @@ export default function App() {
           initial={{ x: 20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="w-96 border-l border-warm-brown/10 p-6 overflow-y-auto flex flex-col gap-6 bg-light-tan"
+          className="w-full lg:w-96 border-t lg:border-t-0 lg:border-l border-warm-brown/10 p-3 sm:p-4 lg:p-6 overflow-y-auto flex flex-col gap-4 lg:gap-6 bg-light-tan"
         >
           {/* Cart */}
           <Cart

@@ -41,14 +41,14 @@ export const OrderQueue = ({ orders, currentOrderId, onSelectOrder }) => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="space-y-5"
+      className="space-y-3 sm:space-y-4 lg:space-y-5"
     >
       {/* Open/Active Orders */}
       <div>
-        <h3 className="text-xs font-bold text-warm-brown/60 uppercase tracking-widest mb-3">
+        <h3 className="text-xs font-bold text-warm-brown/60 uppercase tracking-widest mb-2 sm:mb-3">
           Active Orders ({openOrders.length})
         </h3>
-        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 scrollbar-hide">
           <AnimatePresence>
             {openOrders.map((order) => (
               <motion.button
@@ -58,7 +58,7 @@ export const OrderQueue = ({ orders, currentOrderId, onSelectOrder }) => {
                 exit={{ opacity: 0, x: -20 }}
                 onClick={() => onSelectOrder(order.id)}
                 className={`
-                  flex-shrink-0 p-4 rounded-lg transition-all duration-200
+                  flex-shrink-0 p-2.5 sm:p-3 lg:p-4 rounded-lg transition-all duration-200
                   ${
                     currentOrderId === order.id
                       ? 'card bg-rich-brown text-white shadow-premium-lg ring-2 ring-gold-accent'
@@ -66,9 +66,9 @@ export const OrderQueue = ({ orders, currentOrderId, onSelectOrder }) => {
                   }
                 `}
               >
-                <div className="space-y-2 text-left">
-                  <div className="flex items-center justify-between gap-2 mb-1">
-                    <span className="font-bold text-sm">
+                <div className="space-y-1 sm:space-y-2 text-left">
+                  <div className="flex items-center justify-between gap-2 mb-0.5 sm:mb-1">
+                    <span className="font-bold text-xs sm:text-sm">
                       #{order.id}
                     </span>
                     <div className={currentOrderId === order.id ? 'text-gold-accent' : 'text-warm-brown/60'}>
@@ -89,10 +89,10 @@ export const OrderQueue = ({ orders, currentOrderId, onSelectOrder }) => {
       {/* Completed Orders */}
       {completedOrders.length > 0 && (
         <div>
-          <h3 className="text-xs font-bold text-warm-brown/60 uppercase tracking-widest mb-3">
+          <h3 className="text-xs font-bold text-warm-brown/60 uppercase tracking-widest mb-2 sm:mb-3">
             Completed ({completedOrders.length})
           </h3>
-          <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+          <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 scrollbar-hide">
             <AnimatePresence>
               {completedOrders.slice(-5).map((order) => (
                 <motion.div
@@ -100,14 +100,14 @@ export const OrderQueue = ({ orders, currentOrderId, onSelectOrder }) => {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
-                  className="flex-shrink-0 p-3 rounded-lg card opacity-60"
+                  className="flex-shrink-0 p-2 sm:p-2.5 lg:p-3 rounded-lg card opacity-60"
                 >
-                  <div className="space-y-2 text-left text-sm">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="font-semibold text-rich-brown line-through">
+                  <div className="space-y-1 text-left text-xs sm:text-sm">
+                    <div className="flex items-center justify-between gap-1.5 sm:gap-2">
+                      <span className="font-semibold text-rich-brown line-through text-xs sm:text-sm">
                         #{order.id}
                       </span>
-                      <CheckCircle className="w-4 h-4 text-green-600" strokeWidth={2} />
+                      <CheckCircle className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-green-600" strokeWidth={2} />
                     </div>
                     <p className="text-xs text-warm-brown/60">
                       ₹{order.total?.toFixed(0)}
