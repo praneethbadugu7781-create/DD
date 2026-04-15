@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UXI POS - Premium Dessert Shop System</title>
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "San Francisco", sans-serif;
+      background: linear-gradient(135deg, #FFF8F0 0%, #FFFBF7 50%, #FADADD 100%);
+      color: #4A2C2A;
+      min-height: 100vh;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .glass-light {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .shadow-glass {
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+    }
+
+    .shadow-glass-hover {
+      box-shadow: 0 12px 40px rgba(31, 38, 135, 0.12);
+    }
+
+    .gradient-primary {
+      background: linear-gradient(to right, #D4AF37, #FADADD, #D4AF37);
+    }
+
+    .btn-primary {
+      background-color: #D4AF37;
+      color: #4A2C2A;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(31, 38, 135, 0.05);
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+
+    .menu-item {
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(31, 38, 135, 0.12);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .menu-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .cart-item {
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-info {
+      background: rgba(174, 194, 224, 0.3);
+      color: #4A2C2A;
+    }
+
+    .badge-gold {
+      background: rgba(212, 175, 55, 0.2);
+      color: #4A2C2A;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .pulse-dot {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(4px);
+      z-index: 50;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 24px;
+      padding: 32px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 12px 40px rgba(31, 38, 135, 0.12);
+      animation: slideUp 0.3s ease-out;
+    }
+
+    .payment-method {
+      padding: 16px;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .payment-method:hover {
+      border-color: #D4AF37;
+    }
+
+    .payment-method.active {
+      background: rgba(255, 255, 255, 0.6);
+      border-color: #D4AF37;
+      box-shadow: 0 4px 15px rgba(31, 38, 135, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    // Mock data
+    const menuItems = [
+      { id: 1, name: 'Chocolate Eclair', price: 120, category: 'Desserts', emoji: '🍫' },
+      { id: 2, name: 'Vanilla Dream', price: 100, category: 'Desserts', emoji: '🍰' },
+      { id: 3, name: 'Fudge Brownie', price: 80, category: 'Brownies', emoji: '🟫' },
+      { id: 4, name: 'Chocolate Shake', price: 90, category: 'Shakes', emoji: '🥤' },
+      { id: 5, name: 'Strawberry Bliss', price: 85, category: 'Shakes', emoji: '🍓' },
+      { id: 6, name: 'Tiramisu Cup', price: 110, category: 'Desserts', emoji: '☕' },
+      { id: 7, name: 'Cheesecake NY', price: 130, category: 'Desserts', emoji: '🎂' },
+      { id: 8, name: 'French Macarons', price: 50, category: 'Pastries', emoji: '🟣' },
+      { id: 9, name: 'Glazed Donuts', price: 60, category: 'Pastries', emoji: '🍩' },
+      { id: 10, name: 'Choco Cookies', price: 40, category: 'Pastries', emoji: '🍪' },
+      { id: 11, name: 'Affogato', price: 75, category: 'Shakes', emoji: '🍨' },
+      { id: 12, name: 'Panna Cotta', price: 95, category: 'Desserts', emoji: '🥄' },
+    ];
+
+    // State
+    let cart = [];
+    let showModal = false;
+
+    function addToCart(item) {
+      const existing = cart.find(c => c.id === item.id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...item, quantity: 1 });
+      }
+      render();
+    }
+
+    function updateQuantity(id, qty) {
+      if (qty <= 0) {
+        cart = cart.filter(c => c.id !== id);
+      } else {
+        const item = cart.find(c => c.id === id);
+        if (item) item.quantity = qty;
+      }
+      render();
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(c => c.id !== id);
+      render();
+    }
+
+    function toggleModal() {
+      showModal = !showModal;
+      render();
+    }
+
+    function finalizeOrder() {
+      alert(`✅ Order Finalized!\nTotal: ₹${getTotal()}\n\nThank you for your order!`);
+      cart = [];
+      showModal = false;
+      render();
+    }
+
+    function getTotal() {
+      return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    }
+
+    function render() {
+      const root = document.getElementById('root');
+
+      const categories = ['All', ...new Set(menuItems.map(i => i.category))];
+      const totalItems = cart.length;
+      const totalPrice = getTotal();
+
+      root.innerHTML = `
+        <!-- Top Bar -->
+        <div class="glass shadow-glass sticky top-0 z-40 border-b border-white/20">
+          <div class="flex items-center justify-between px-6 py-4 max-w-screen-2xl mx-auto">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center text-lg">🛍️</div>
+              <div>
+                <h1 class="text-2xl font-bold text-chocolate">UXI POS</h1>
+                <p class="text-xs text-chocolate/60">Premium Dessert Shop</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-6">
+              <div class="text-sm font-medium text-chocolate/70">
+                <span id="time"></span>
+              </div>
+              <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-pastel-pink/30">
+                🛒 ${totalItems} Items
+              </div>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-soft-gold/20 flex items-center justify-center cursor-pointer">👤</div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex h-[calc(100vh-100px)] overflow-hidden">
+          <!-- Left Panel - Menu -->
+          <div class="flex-1 overflow-hidden p-6 border-r border-white/30">
+            <!-- Search & Filter -->
+            <div class="glass rounded-2xl p-3 mb-4 flex items-center gap-3 shadow-glass">
+              <span>🔍</span>
+              <input type="text" placeholder="Search items..." class="flex-1 bg-transparent text-chocolate placeholder-chocolate/40 outline-none text-sm" />
+            </div>
+
+            <!-- Categories -->
+            <div class="flex gap-2 mb-4 overflow-x-auto pb-2 scrollbar-hide">
+              ${categories.map(cat => `
+                <button class="btn-primary" style="background: ${cat === 'All' ? '#D4AF37' : 'rgba(255,255,255,0.6)'}">${cat}</button>
+              `).join('')}
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto pr-2">
+              ${menuItems.map((item, idx) => `
+                <div class="menu-item glass shadow-glass fade-in" style="animation-delay: ${idx * 30}ms">
+                  <div style="background: linear-gradient(135deg, #FADADD 0%, #D4AF37 100%); height: 160px; display: flex; align-items: center; justify-content: center; font-size: 48px;">
+                    ${item.emoji}
+                  </div>
+                  <div class="p-4">
+                    <h3 class="font-semibold text-chocolate text-sm mb-1">${item.name}</h3>
+                    <p class="text-xs text-chocolate/60 mb-3">Premium ${item.category}</p>
+                    <div class="flex items-center justify-between pt-3 border-t border-white/40">
+                      <span class="text-lg font-bold text-chocolate">₹${item.price}</span>
+                      <button class="btn-primary p-2" onclick="window.addToCart({id: ${item.id}, name: '${item.name}', price: ${item.price}, emoji: '${item.emoji}'})">➕</button>
+                    </div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Right Panel - Cart -->
+          <div class="w-96 border-l border-white/30 p-6 overflow-y-auto flex flex-col gap-4 bg-gradient-to-b from-white/20">
+            <!-- Cart Header -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span>🛒</span>
+                <h2 class="text-lg font-bold text-chocolate">Cart</h2>
+                ${totalItems > 0 ? `<span class="badge badge-gold">${totalItems} items</span>` : ''}
+              </div>
+            </div>
+
+            <!-- Cart Items or Empty State -->
+            ${cart.length === 0 ? `
+              <div class="flex-1 flex flex-col items-center justify-center gap-4">
+                <div class="w-16 h-16 rounded-2xl bg-pastel-pink/20 flex items-center justify-center text-3xl">🛒</div>
+                <p class="text-center text-chocolate/60 text-sm">Your cart is empty<br/>Add items to get started</p>
+              </div>
+            ` : `
+              <div class="flex-1 overflow-y-auto space-y-2">
+                ${cart.map((item, idx) => `
+                  <div class="cart-item glass rounded-xl p-3 flex items-center justify-between gap-3">
+                    <div class="flex-1 min-w-0">
+                      <h4 class="font-semibold text-chocolate text-sm truncate">${item.emoji} ${item.name}</h4>
+                      <p class="text-xs text-chocolate/60">₹${item.price} each</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <button onclick="window.updateQuantity(${item.id}, ${item.quantity - 1})" class="p-1.5 rounded-lg bg-pastel-pink/30 hover:bg-pastel-pink/50">−</button>
+                      <input type="number" min="1" value="${item.quantity}" onchange="window.updateQuantity(${item.id}, parseInt(this.value))" class="w-10 h-8 text-center font-semibold text-chocolate bg-white/50 rounded-lg border border-white/30 text-sm" />
+                      <button onclick="window.updateQuantity(${item.id}, ${item.quantity + 1})" class="p-1.5 rounded-lg bg-soft-gold/30 hover:bg-soft-gold/50">+</button>
+                    </div>
+                    <div class="text-right min-w-max">
+                      <p class="font-bold text-chocolate text-sm">₹${item.price * item.quantity}</p>
+                      <button onclick="window.removeFromCart(${item.id})" class="mt-1 p-1.5 rounded-lg bg-red-200/30 hover:bg-red-300/50 text-red-600">🗑️</button>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+
+              <div class="border-t border-white/40"></div>
+
+              <!-- Total -->
+              <div class="glass rounded-xl p-3 flex items-center justify-between">
+                <span class="font-semibold text-chocolate">Total</span>
+                <span class="text-2xl font-bold text-chocolate">₹${totalPrice}</span>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="flex gap-3 pt-2">
+                <button class="btn-primary flex-1" style="background: rgba(255,255,255,0.6)">Hold Order</button>
+                <button class="btn-primary flex-1 gradient-primary" onclick="window.toggleModal()">Finalize</button>
+              </div>
+            `}
+
+            ${totalItems === 0 ? '' : `
+              <!-- Order Queue Placeholder -->
+              <div class="border-t border-white/40 pt-4">
+                <h3 class="text-xs font-bold text-chocolate/60 uppercase tracking-wider mb-3">Active Orders (1)</h3>
+                <div class="glass rounded-xl p-3 shadow-glass">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span class="font-bold text-chocolate text-sm">#101</span>
+                    <span class="badge badge-info">OPEN</span>
+                  </div>
+                  <p class="text-xs text-chocolate/60">${totalItems} items</p>
+                </div>
+              </div>
+            `}
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal-overlay ${showModal ? 'active' : ''}">
+          <div class="modal-content">
+            <h2 class="text-2xl font-bold mb-6 text-chocolate">Complete Payment</h2>
+
+            <div class="p-4 rounded-xl bg-gradient-to-r from-soft-gold/10 to-pastel-pink/10 border border-soft-gold/20 mb-6">
+              <div class="flex items-center justify-between">
+                <span class="text-chocolate/70 font-medium">Order Total</span>
+                <span class="text-2xl font-bold text-chocolate">₹${totalPrice}</span>
+              </div>
+            </div>
+
+            <p class="text-sm font-semibold text-chocolate mb-3">Select Payment Method</p>
+            <div class="grid grid-cols-3 gap-3 mb-6">
+              <div class="payment-method glass active" onclick="alert('💰 Cash selected')">
+                <div class="text-3xl mb-2">💰</div>
+                <p class="text-xs font-semibold">Cash</p>
+              </div>
+              <div class="payment-method glass" onclick="alert('📱 UPI selected')">
+                <div class="text-3xl mb-2">📱</div>
+                <p class="text-xs font-semibold">UPI</p>
+              </div>
+              <div class="payment-method glass" onclick="alert('💳 Card selected')">
+                <div class="text-3xl mb-2">💳</div>
+                <p class="text-xs font-semibold">Card</p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-lg bg-soft-gold/10 border border-soft-gold/30 flex items-start gap-2 mb-6">
+              <span class="text-lg">✅</span>
+              <p class="text-xs text-chocolate/70">Payment will be processed immediately after confirmation</p>
+            </div>
+
+            <div class="flex gap-3">
+              <button class="btn-primary flex-1" style="background: rgba(255,255,255,0.6)" onclick="window.toggleModal()">Cancel</button>
+              <button class="btn-primary flex-1 gradient-primary" onclick="window.finalizeOrder()">Confirm Payment</button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Update time
+      const timeEl = document.getElementById('time');
+      if (timeEl) {
+        const now = new Date();
+        timeEl.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+      }
+    }
+
+    // Expose functions to window
+    window.addToCart = addToCart;
+    window.updateQuantity = updateQuantity;
+    window.removeFromCart = removeFromCart;
+    window.toggleModal = toggleModal;
+    window.finalizeOrder = finalizeOrder;
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>
