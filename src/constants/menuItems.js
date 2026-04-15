@@ -5,7 +5,7 @@ export const MENU_ITEMS = [
     name: 'Bubble Triple Chocolate',
     price: 139,
     category: 'Waffles',
-    image: 'https://images.unsplash.com/photo-1567327613485-f3a2d3c4a657?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1595521624032-da79c8beba57?w=400&h=400&fit=crop&q=80',
     description: 'Crispy outside, soft inside, pure happiness',
   },
   {
@@ -13,7 +13,7 @@ export const MENU_ITEMS = [
     name: 'Fruit Loaded Waffle',
     price: 149,
     category: 'Waffles',
-    image: 'https://images.unsplash.com/photo-1614707267537-b85faf00021b?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1567327613485-f3a2d3c4a657?w=400&h=400&fit=crop&q=80',
     description: 'Crispy outside, soft inside, pure happiness',
   },
   {
@@ -21,7 +21,7 @@ export const MENU_ITEMS = [
     name: 'Triple Chocolate with Ice Cream',
     price: 149,
     category: 'Waffles',
-    image: 'https://images.unsplash.com/photo-1567327613485-f3a2d3c4a657?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291840?w=400&h=400&fit=crop&q=80',
     description: 'Crispy outside, soft inside, pure happiness',
   },
   {
@@ -29,7 +29,7 @@ export const MENU_ITEMS = [
     name: 'Pops Fruit Loaded',
     price: 159,
     category: 'Waffles',
-    image: 'https://images.unsplash.com/photo-1614707267537-b85faf00021b?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=400&fit=crop&q=80',
     description: 'Crispy outside, soft inside, pure happiness',
   },
   {
@@ -37,7 +37,7 @@ export const MENU_ITEMS = [
     name: 'KitKat Waffle',
     price: 149,
     category: 'Waffles',
-    image: 'https://images.unsplash.com/photo-1567327613485-f3a2d3c4a657?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop&q=80',
     description: 'Crispy outside, soft inside, pure happiness',
   },
   {
@@ -45,7 +45,7 @@ export const MENU_ITEMS = [
     name: 'Oreo Waffle',
     price: 159,
     category: 'Waffles',
-    image: 'https://images.unsplash.com/photo-1614707267537-b85faf00021b?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1585518419759-47cf95267cef?w=400&h=400&fit=crop&q=80',
     description: 'Crispy outside, soft inside, pure happiness',
   },
   {
@@ -53,7 +53,7 @@ export const MENU_ITEMS = [
     name: 'Nutella Waffle',
     price: 179,
     category: 'Waffles',
-    image: 'https://images.unsplash.com/photo-1567327613485-f3a2d3c4a657?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=400&fit=crop&q=80',
     description: 'Crispy outside, soft inside, pure happiness',
   },
   {
@@ -69,7 +69,7 @@ export const MENU_ITEMS = [
     name: 'DD Special Bubble Waffle',
     price: 229,
     category: 'Waffles',
-    image: 'https://images.unsplash.com/photo-1567327613485-f3a2d3c4a657?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1595521624032-da79c8beba57?w=400&h=400&fit=crop&q=80',
     description: 'Crispy outside, soft inside, pure happiness',
   },
 
@@ -87,7 +87,7 @@ export const MENU_ITEMS = [
     name: 'Brownie Strawberry Bowl',
     price: 139,
     category: 'Brownies',
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop&q=80',
     description: 'Rich, fudgy & made for chocolate lovers',
   },
   {
@@ -95,7 +95,7 @@ export const MENU_ITEMS = [
     name: 'Brownie with Ice Cream',
     price: 119,
     category: 'Brownies',
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291840?w=400&h=400&fit=crop&q=80',
     description: 'Rich, fudgy & made for chocolate lovers',
   },
   {
@@ -103,7 +103,7 @@ export const MENU_ITEMS = [
     name: 'Hazelnut Brownie',
     price: 129,
     category: 'Brownies',
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1585518419759-47cf95267cef?w=400&h=400&fit=crop&q=80',
     description: 'Rich, fudgy & made for chocolate lovers',
   },
   {
@@ -111,7 +111,7 @@ export const MENU_ITEMS = [
     name: 'Biscoff Brownie',
     price: 119,
     category: 'Brownies',
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=400&fit=crop&q=80',
     description: 'Rich, fudgy & made for chocolate lovers',
   },
   {
@@ -119,7 +119,7 @@ export const MENU_ITEMS = [
     name: 'Triple Brownie',
     price: 79,
     category: 'Brownies',
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1595521624032-da79c8beba57?w=400&h=400&fit=crop&q=80',
     description: 'Rich, fudgy & made for chocolate lovers',
   },
   {
@@ -127,7 +127,7 @@ export const MENU_ITEMS = [
     name: 'Oreo Brownie',
     price: 99,
     category: 'Brownies',
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1614707267537-b85faf00021b?w=400&h=400&fit=crop&q=80',
     description: 'Rich, fudgy & made for chocolate lovers',
   },
   {
@@ -143,7 +143,7 @@ export const MENU_ITEMS = [
     name: 'Matilda Cake',
     price: 149,
     category: 'Brownies',
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop&q=80',
     description: 'Rich, fudgy & made for chocolate lovers',
   },
 
@@ -161,7 +161,7 @@ export const MENU_ITEMS = [
     name: 'Triple Chocolate',
     price: 69,
     category: 'Popsicle',
-    image: 'https://images.unsplash.com/photo-1599599810694-b5ac4dd33c4f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=400&fit=crop&q=80',
     description: 'Chilled, creamy & full of flavor',
   },
   {
@@ -169,7 +169,7 @@ export const MENU_ITEMS = [
     name: 'Mix Belgium',
     price: 59,
     category: 'Popsicle',
-    image: 'https://images.unsplash.com/photo-1599599810694-b5ac4dd33c4f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=400&fit=crop&q=80',
     description: 'Chilled, creamy & full of flavor',
   },
   {
@@ -185,7 +185,7 @@ export const MENU_ITEMS = [
     name: 'Oreo',
     price: 79,
     category: 'Popsicle',
-    image: 'https://images.unsplash.com/photo-1599599810694-b5ac4dd33c4f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=400&fit=crop&q=80',
     description: 'Chilled, creamy & full of flavor',
   },
   {
@@ -201,7 +201,7 @@ export const MENU_ITEMS = [
     name: 'Biscoff',
     price: 89,
     category: 'Popsicle',
-    image: 'https://images.unsplash.com/photo-1599599810694-b5ac4dd33c4f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=400&fit=crop&q=80',
     description: 'Chilled, creamy & full of flavor',
   },
   {
@@ -217,7 +217,7 @@ export const MENU_ITEMS = [
     name: 'Strawberry',
     price: 99,
     category: 'Popsicle',
-    image: 'https://images.unsplash.com/photo-1599599810694-b5ac4dd33c4f?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=400&fit=crop&q=80',
     description: 'Chilled, creamy & full of flavor',
   },
 
@@ -235,7 +235,7 @@ export const MENU_ITEMS = [
     name: 'KitKat Croissant',
     price: 129,
     category: 'Croissants',
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561911?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1549365776-a3ce3c74ce5f?w=400&h=400&fit=crop&q=80',
     description: 'Buttery, flaky & perfectly filled',
   },
   {
@@ -251,7 +251,7 @@ export const MENU_ITEMS = [
     name: 'Lotus Biscoff Croissant',
     price: 139,
     category: 'Croissants',
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561911?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1549365776-a3ce3c74ce5f?w=400&h=400&fit=crop&q=80',
     description: 'Buttery, flaky & perfectly filled',
   },
   {
@@ -267,7 +267,7 @@ export const MENU_ITEMS = [
     name: 'Magnum Pistachio Croissant',
     price: 179,
     category: 'Croissants',
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561911?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1549365776-a3ce3c74ce5f?w=400&h=400&fit=crop&q=80',
     description: 'Buttery, flaky & perfectly filled',
   },
   {
@@ -293,7 +293,7 @@ export const MENU_ITEMS = [
     name: 'Biscoff Cheesecake',
     price: 159,
     category: 'Cheesecake',
-    image: 'https://images.unsplash.com/photo-1610312289033-f0ae2e1c4e0b?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1571115764595-644a26f4a104?w=400&h=400&fit=crop&q=80',
     description: 'Smooth, creamy & absolutely divine',
   },
   {
@@ -319,7 +319,7 @@ export const MENU_ITEMS = [
     name: 'Chicken Wings',
     price: 149,
     category: 'Savory',
-    image: 'https://images.unsplash.com/photo-1585238341710-4913dfb2d5d6?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1527477396212-2b06e32f2b51?w=400&h=400&fit=crop&q=80',
     description: 'Perfect bites for every craving',
   },
   {
@@ -327,7 +327,7 @@ export const MENU_ITEMS = [
     name: 'Lasagna Veg',
     price: 139,
     category: 'Savory',
-    image: 'https://images.unsplash.com/photo-1585238341710-4913dfb2d5d6?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=400&fit=crop&q=80',
     description: 'Perfect bites for every craving',
   },
   {
@@ -335,7 +335,7 @@ export const MENU_ITEMS = [
     name: 'Lasagna Chicken',
     price: 159,
     category: 'Savory',
-    image: 'https://images.unsplash.com/photo-1585238341710-4913dfb2d5d6?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1540189549336-e6e99527f2f4?w=400&h=400&fit=crop&q=80',
     description: 'Perfect bites for every craving',
   },
   {
@@ -343,7 +343,7 @@ export const MENU_ITEMS = [
     name: 'Chicken Bun',
     price: 99,
     category: 'Savory',
-    image: 'https://images.unsplash.com/photo-1585238341710-4913dfb2d5d6?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=400&fit=crop&q=80',
     description: 'Perfect bites for every craving',
   },
   {
@@ -359,7 +359,7 @@ export const MENU_ITEMS = [
     name: 'French Fries Peri Peri',
     price: 89,
     category: 'Savory',
-    image: 'https://images.unsplash.com/photo-1585238341710-4913dfb2d5d6?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1527477396212-2b06e32f2b51?w=400&h=400&fit=crop&q=80',
     description: 'Perfect bites for every craving',
   },
   {
@@ -375,7 +375,7 @@ export const MENU_ITEMS = [
     name: 'Cheesy Fries',
     price: 109,
     category: 'Savory',
-    image: 'https://images.unsplash.com/photo-1585238341710-4913dfb2d5d6?w=400&h=400&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=400&fit=crop&q=80',
     description: 'Perfect bites for every craving',
   },
 ];
